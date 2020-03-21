@@ -58,10 +58,24 @@ export default {
     // 提交我的登录表单
     submitLogin () {
     // el-form实例
-      this.$refs.myForm.validate(function (isOk) {
+      this.$refs.myForm.validate((isOk) => {
         if (isOk) {
           // 认为前端登录校验成功
-          console.log('前端调用接口，发送密码校验')
+        // 地址参数 查询参数 params对象
+        // body参数 data对象
+          this.$axios({
+            url: '/authorizations', // 请求地址
+            method: 'post',
+            data: this.loginForm
+          }).then(result => {
+            window.localStorage.setItem('user-token', result.data.data.token) // 前端缓存令牌
+            this.$router.push('/home')
+          }).catch(() => {
+            this.$message({
+              message: '您输入的账户或密码不匹配 ！！！',
+              type: 'warning'
+            })
+          })
         }
       })
     }
@@ -69,7 +83,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 // 加入scoped属性，样式只对当前页面生效
 // 原理：为当前页面的标签生成了 data-v-随机数
 .login{
