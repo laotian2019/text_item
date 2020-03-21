@@ -1,6 +1,7 @@
 <template>
-  <!-- 一级路由容器 -->
-    <router-view />
+  <div>
+      主页
+  </div>
 </template>
 
 <script>
