@@ -176,6 +176,9 @@
         </div>
         <div class="col-sm-12 col-md-4">
           <!-- ----------------- 插入WebGL------1111111------ -->
+            <div class="three-t">
+              <three-d></three-d>
+            </div>
         </div>
       </div>
       <div style="display:flex">
@@ -184,7 +187,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">
                 设备
-                <strong>1 #</strong>
+                <strong>3 #</strong>
               </h3>
               <span class="pull-right">
                 <span class="label label-success">运行中</span>
@@ -268,7 +271,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">
                 设备
-                <strong>2 #</strong>
+                <strong>4 #</strong>
               </h3>
               <span class="pull-right">
                 <span class="label label-success">运行中</span>
@@ -344,12 +347,16 @@
 
 <script>
 // import echarts from 'charts'
+import threed from '../three/three-d' // 引入
 
 export default {
   data () {
     return {
       list: []
     }
+  },
+  components: {
+    'three-d': threed
   },
   methods: {
     initCharts () {
@@ -459,65 +466,16 @@ export default {
           }
         ]
       })
-      // myChart3.setOption({
-      //   title: {
-      //     // text: 'Step Line'
-      //   },
-      //   tooltip: {
-      //     trigger: 'axis'
-      //   },
-      //   legend: {
-      //     data: ['Step Start', 'Step Middle', 'Step End']
-      //   },
-      //   grid: {
-      //     left: '3%',
-      //     right: '4%',
-      //     bottom: '3%',
-      //     containLabel: true
-      //   },
-      //   toolbox: {
-      //     feature: {
-      //       saveAsImage: {}
-      //     }
-      //   },
-      //   xAxis: {
-      //     type: 'category',
-      //     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      //   },
-      //   yAxis: {
-      //     type: 'value'
-      //   },
-      //   series: [
-      //     {
-      //       name: 'Step Start',
-      //       type: 'line',
-      //       step: 'start',
-      //       data: [120, 132, 101, 134, 90, 230, 210]
-      //     },
-      //     {
-      //       name: 'Step Middle',
-      //       type: 'line',
-      //       step: 'middle',
-      //       data: [220, 282, 201, 234, 290, 430, 410]
-      //     },
-      //     {
-      //       name: 'Step End',
-      //       type: 'line',
-      //       step: 'end',
-      //       data: [450, 432, 401, 454, 590, 530, 510]
-      //     }
-      //   ]
-      // })
       myChart4.setOption({
         title: {
-          text: '某地区蒸发量和降水量',
-          subtext: '纯属虚构'
+          text: '机械数据',
+          subtext: ''
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
-          data: ['蒸发量', '降水量']
+          data: ['数值一', '数值二']
         },
         toolbox: {
           show: true,
@@ -577,14 +535,14 @@ export default {
       })
       myChart5.setOption({
         title: {
-          text: '某地区蒸发量和降水量',
-          subtext: '纯属虚构'
+          text: '机械数据',
+          subtext: ''
         },
         tooltip: {
           trigger: 'axis'
         },
         legend: {
-          data: ['蒸发量', '降水量']
+          data: ['数值一', '数值二']
         },
         toolbox: {
           show: true,
@@ -700,6 +658,12 @@ export default {
   } */
 .pull-right {
   float: right !important;
+}
+.three-t {
+  margin-top: 10px;
+  width: 300px;
+  height: 300px;
+  /* background-color: rgb(66, 11, 11); */
 }
 /* .const {
 } */
