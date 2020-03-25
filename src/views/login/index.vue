@@ -87,20 +87,17 @@ export default {
 // 加入scoped属性，样式只对当前页面生效
 // 原理：为当前页面的标签生成了 data-v-随机数
 .login{
-    background-image: url('../../assets/img/banner01.jpg');
-    background-size: 100% 100%;
-    height: 578px;
-    position: fixed;
-    width: 1600px;
+    background-image: url('../../assets/img/timg2.gif');
+    background-size: cover; // 自适应背景图片
+    height: 100vh;
     display: flex;
-    // float: left;
+    justify-content: center;
+    align-items: center;
     .login-card {
         width: 450px;
         height: 330px;
-        margin-left: 90px;
-        margin-top: 80px;
         .title{
-            text-align: center;
+            margin-left: 50px;
             img {
                 height: 50px;
             }

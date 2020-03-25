@@ -9,7 +9,7 @@ const routes = [
   {
     // 强制调转
     path: '/',
-    redirect: '/home'
+    redirect: '/login'
   }, {
     // 主页
     path: '/home',
